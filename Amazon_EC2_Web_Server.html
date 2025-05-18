@@ -28,17 +28,108 @@
             color: #bbbbbb;
             font-weight: 300;
         }
+        .content-section {
+            border-left: 5px solid #4CAF50;
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .footer {
+            font-size: 14px;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #ccc;
+        }
+
 
         .glow {
             color: #4CAF50;
             text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50;
         }
+         a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
     <h1 class="header-tech">Amazon EC2 Web Server</h1>
     <h2 class="subheader">launch a virtual machine that is running in a location near base</h2>
     <h3 class="glow">Thsi is step One You will need to log into the Amazon web services portal to commence</h3>
+
+    <h1 class="header-tech">AWS EC2 Setup Guide</h1>
+    <h2 class="subheader">Log in to the Amazon EC2 Management Console</h2>
+
+    <div class="content-section">
+        <p>To start the lab, log into the Amazon EC2 management console:  
+        <a href="http://aws.amazon.com/ec2/">AWS EC2 Console</a></p>
+        <p>For signup purposes, choosing "Business" or "School" and using a Murdoch email has reportedly led to fewer delays with credit card verification.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Launch an Ubuntu Machine in EC2</h2>
+        <ul>
+            <li><strong>Launch a new instance</strong> (virtual machine).</li>
+            <li>Follow the steps on the AWS site.</li>
+            <li><strong>Instance type:</strong> Pick a "free tier eligible" Ubuntu 20.04 Instance.</li>
+            <li><strong>Configure instance details:</strong> Leave everything as default.</li>
+            <li><strong>Add storage:</strong> Default is an 8GB hard drive; leave it as is.</li>
+            <li><strong>Add tags:</strong> No tags needed, proceed to security group setup.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Configure Security Group</h2>
+        <ul>
+            <li><strong>Security group name:</strong> Call it "ssh-and-web".</li>
+            <li>The existing **SSH** permission is required for remote management.</li>
+            <li>Click **Add Rule**, then select **HTTP (web)** to allow web traffic.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Review and Launch</h2>
+        <ul>
+            <li>Ignore any warning about the server being "open to the world"—we’re building a public webserver!</li>
+            <li>Click **Launch** if the configuration looks good.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Create a Key Pair</h2>
+        <ul>
+            <li>AWS uses **key files** instead of passwords for authentication.</li>
+            <li>Save this key file securely—it’s essential for managing the virtual machine.</li>
+            <li>Name it **"webserver-key"** for easy identification.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Launch Instance</h2>
+        <ul>
+            <li>Click **Launch Instance** to start the server.</li>
+            <li>Use **View Instance** to monitor progress.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>Guide © 2025 | AWS EC2 Configuration</p>
+    </div>
+
+    <div class="glow">Status: Ready for Deployment</div>
+
+
+
+
+    
 </body>
 </html>
 
