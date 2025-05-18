@@ -3,47 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funky Fun Headings</title>
+    <title>Amazon EC2 Web Server</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
         body {
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+            font-family: 'Roboto Mono', monospace;
             text-align: center;
-            background-color: #fffae6;
-            font-family: Arial, sans-serif;
+            padding: 50px;
         }
 
-        .funky-heading {
-            font-family: 'Rubik Bubbles', sans-serif;
-            font-size: 50px;
-            color: #ff0077;
-            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-            animation: bounce 1s infinite alternate;
-        }
-
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-10px); }
-        }
-
-        .rainbow {
-            font-size: 40px;
+        .header-tech {
+            font-size: 42px;
             font-weight: bold;
-            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: fadeIn 2s ease-in;
+            border-bottom: 2px solid #4CAF50;
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .subheader {
+            font-size: 28px;
+            color: #bbbbbb;
+            font-weight: 300;
+        }
+
+        .glow {
+            color: #4CAF50;
+            text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50;
         }
     </style>
 </head>
 <body>
-    <h1 class="funky-heading">Amazon EC2 Web Server</h1>
-    <h2 class="rainbow">Setting up a virtual machine running in a location and launching Ubantu machine in EC2 </h2>
+    <h1 class="header-tech">Amazon EC2 Web Server</h1>
+    <h2 class="subheader">launch a virtual machine that is running in a location near base</h2>
+    <h3 class="glow">Thsi is step One You will need to log into the Amazon web services portal to commence</h3>
 </body>
 </html>
 
