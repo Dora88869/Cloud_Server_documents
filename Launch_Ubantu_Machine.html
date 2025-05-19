@@ -28,16 +28,86 @@
             color: #bbbbbb;
             font-weight: 300;
         }
+        .content-section {
+            border-left: 5px solid #4CAF50;
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        .code-block {
+            background-color: #2b2b2b;
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        .footer {
+            font-size: 14px;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #ccc;
+        }
 
         .glow {
             color: #4CAF50;
             text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50;
         }
+         a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
     <h1 class="header-tech">Launch Ubantu Machine on EC2</h1>
     <h2 class="subheader">EC2 instance has been launched and Key pair saved</h2>
     <h3 class="glow">this step can only be done once an EC2 instance has been launched</h3>
+    
+<h1 class="header-tech">Console Access to the Virtual Machine</h1>
+   
+
+    <div class="content-section">
+        <p> Log into the command line of the Ubantu virtual machine.</p>
+        <p>Select your virtual machine and click the <strong>“Connect”</strong> button. Then, click on **SSH client** and note the connection string provided.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Open Terminal on Ubantu virtual machine</h2>
+        <ul>
+            <li> <strong>open the Linux Terminal</strong></li>
+            <li>Navigate to the directory where key pair file "golfblogkey" is stored using:</li>
+        </ul>
+        <div class="code-block">cd /path/to/key-directory</div>
+    </div>
+
+    <div class="content-section">
+        <h2>Connect via SSH</h2>
+        <p>Once in the correct directory, paste the SSH connection string provided:</p>
+        <div class="code-block">ssh -i "yourkeyname.pem" ubuntu@ec2-12-123-1-35.ap-southwest-5.compute.amazonaws.com</div>
+        <p>yourkeyname.pem</strong> should be golfblogkey.pem</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Successful Login</h2>
+        <p> there is now SSH access to the cloud machine.</p>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Dora Azmitia</p>
+    </div>
+
+    <div class="glow">Status: Connected</div>
+
+
+    
 </body>
 </html>
