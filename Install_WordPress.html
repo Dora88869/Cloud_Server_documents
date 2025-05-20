@@ -28,16 +28,127 @@
             color: #bbbbbb;
             font-weight: 300;
         }
+         .content-section {
+            border-left: 5px solid #4CAF50;
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        .code-block {
+            background-color: #2b2b2b;
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        .footer {
+            font-size: 14px;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #ccc;
+        }
+
 
         .glow {
             color: #4CAF50;
             text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50;
         }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
     <h1 class="header-tech">Install WordPress</h1>
     <h2 class="subheader">Install WordPress on the Ubantu machine</h2>
     <h3 class="glow">This is step three Apache2 needs to be installed before WordPress, However this can be doen at the same time</h3>
+
+
+     <div class="content-section">
+        <h2>Install Required Packages</h2>
+        <p>WordPress requires **PHP** and **MySQL**, install the required packages first:</p>
+        <div class="code-block">sudo apt update<br>sudo apt install php libapache2-mod-php php-mysql mariadb-server mariadb-client</div>
+    </div>
+
+    <div class="content-section">
+        <h2>Configure MySQL Database</h2>
+        <ul>
+            <li>Access MySQL:</li>
+        </ul>
+        <div class="code-block">sudo mysql -u root -p</div>
+        <ul>
+            <li>Create a database and user:</li>
+        </ul>
+        <div class="code-block">
+CREATE DATABASE wordpress;<br>
+CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'yourpassword';<br>
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'localhost';<br>
+FLUSH PRIVILEGES;<br>
+EXIT;
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Download and Extract WordPress</h2>
+        <p>Navigate to the web directory, download WordPress and extract the archive:</p>
+        <div class="code-block">
+cd /var/www/html/<br>
+sudo wget https://wordpress.org/latest.tar.gz<br>
+sudo tar -xzvf latest.tar.gz
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Configure WordPress</h2>
+        <ul>
+            <li>Rename the sample config file:</li>
+        </ul>
+        <div class="code-block">sudo mv wordpress/wp-config-sample.php wordpress/wp-config.php</div>
+        <ul>
+            <li>Edit the config file with database details:</li>
+        </ul>
+        <div class="code-block">sudo nano wordpress/wp-config.php</div>
+        <p>Update the following lines:</p>
+        <div class="code-block">
+define('DB_NAME', 'wordpress');<br>
+define('DB_USER', 'wpuser');<br>
+define('DB_PASSWORD', 'yourpassword');<br>
+define('DB_HOST', 'localhost');
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Set Permissions and Restart Apache2</h2>
+        <p>Adjust ownership and restart Apache2:</p>
+        <div class="code-block">
+sudo chown -R www-data:www-data /var/www/html/wordpress<br>
+sudo systemctl restart apache2
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Complete Installation via Web Interface</h2>
+        <p>Open your browser and go to:</p>
+        <div class="code-block">http://your-server-ip/wordpress</div>
+        <p>Follow the WordPress setup wizard to complete installation.</p>
+    </div>
+
+    <div class="footer">
+        <p> © 2025 Dora Azmitia</p>
+    </div>
+
+    <div class="glow">Status: WordPress Ready</div>
+
+
 </body>
 </html>
