@@ -69,6 +69,35 @@
         <h2>5. Wait for DNS Propagation</h2>
         <p>Changes can take **a few minutes to 48 hours** to fully propagate.</p>
     </div>
+    <h1 class="header-tech">Obtain a Let's Encrypt Digital Certificate</h1>
+    <h2 class="subheader">Step-by-Step Guide</h2>
+
+    <div class="content-section">
+        <h2>1. Ensure Firewall Ports Are Open</h2>
+        <p>For testing purposes, **TCP ports 22, 80, and 443** should be available through the firewall.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>2. Test Your Website Over HTTP (Port 80)</h2>
+        <p>Before obtaining a certificate, ensure your website is accessible over **HTTP (port 80)**.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>3. Get Your SSL Certificate</h2>
+        <ul>
+            <li>Go to <a href="https://certbot.eff.org/">Certbot</a>.</li>
+            <li>Select **Apache** on **Linux (snap)**.</li>
+            <li>Follow the provided instructions on the command prompt of the Ubantu Virtual Machine.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>4. Verify HTTPS Setup</h2>
+        <p>Once you've installed the certificate, visit website using **HTTPS (port 443)**.</p>
+        <p>Look for the <strong>lock icon</strong> in your browser’s address bar.</p>
+            
+    </div>
+
 
     <div class="footer">
         <p>© 2025 Dora Azmitia</p>
