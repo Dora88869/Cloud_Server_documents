@@ -39,5 +39,53 @@
     <h1 class="header-tech">Encryption certificate and DNS</h1>
     <h2 class="subheader">Linking domain name to public IP address of virtual machine and then obtaining a TLS certifcate </h2>
     <h3 class="glow">this is the fourth step </h3>
+
+    <div class="content-section">
+        <h2>1. Log in to GoDaddy</h2>
+        <p>Go to <a href="https://www.godaddy.com/">GoDaddy</a> and sign in to your account.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>2. Access DNS Settings</h2>
+        <ul>
+            <li>Click **My Products** → Select your domain.</li>
+            <li>Click ** DNS** to open the DNS settings.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>3. Add an A Record</h2>
+        <ul>
+            <li>Find the **A (Type) Record** section.</li>
+            <li>If an **A record** already exists, edit it. Otherwise, click **Add Record**.</li>
+            <li>Set the **Name** field to `@` (this represents your root domain).</li>
+            <li>Enter your **public IP address** in the **Value** field.</li>
+            <li>Set **TTL** (Time to Live) to the shortest available time for faster propagation.</li>
+            <li>Click **Save**.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>4. Add a CNAME Record (Optional)</h2>
+        <ul>
+            <li>Click **Add Record** → Select **CNAME (Alias)**.</li>
+            <li>Set **Name** to `www`.</li>
+            <li>Set **Value** to `@` (or domain name).</li>
+            <li>Click **Save**.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>5. Wait for DNS Propagation</h2>
+        <p>Changes can take **a few minutes to 48 hours** to fully propagate.</p>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Dora Azmitia</p>
+    </div>
+
+    <div class="glow">Status: DNS Update in Progress</div>
+
+
 </body>
 </html>
