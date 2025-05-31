@@ -100,6 +100,8 @@ tar -czf $BACKUP_DIR/wordpress_db_$TIMESTAMP.tar.gz -C $BACKUP_DIR wordpress_db_
 rm $BACKUP_DIR/wordpress_db_$TIMESTAMP.sql
 
 echo "Monthly backup completed!"
+
+crontab -e 0 3 1 * * /path/to/backup.sh
         
     </div>
 
